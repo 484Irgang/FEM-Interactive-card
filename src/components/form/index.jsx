@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react';
+import { useState } from 'react';
 import './style.css'
 
 function Form(){
@@ -7,7 +7,6 @@ const [inputNome, setInputNome] = useState();
 const [inputMonth, setInputMonth] = useState();
 const [inputYear, setInputYear] = useState();
 const [inputCvc, setInputCvc] = useState();
-const [empty, setEmpty] = useState(false);
 
 
 function preencherCampoNum(e){
@@ -73,31 +72,55 @@ function handleClick(e){
     const cvc = document.querySelector("#cvc")
 
     const dados = [nome,number,dateMonth,dateYear,cvc];
-
-    for(var i=0;i<dados.length;i++){
-        if(dados[i].value == ''){
-            setEmpty(state => true);
-        }
-    }
-}
-
-useEffect(() => {
-    const nome = document.querySelector("#name");
-    const number = document.querySelector("#number");
-    const dateMonth = document.querySelector(".date-month");
-    const dateYear = document.querySelector(".date-year");
-    const cvc = document.querySelector("#cvc")
-
     const h6 = document.querySelectorAll(".form h6");
-    const dados = [nome,number,dateMonth,dateYear,cvc];
+
 
     for(var i=0;i<dados.length;i++){
         if(dados[i].value == ''){
-            dados[i].style.border = empty ? "0.5px solid red" : "0.5px solid #DEDEDE";
-            console.log(h6);
+            dados[i].style.border = "0.5px solid #de4a4a";
+            h6[i].innerHTML = "Can't be blank";
+        }
+        else{
+            dados[i].style.border = "0.5px solid #dedede";
+            h6[i].innerHTML = "";
         }
     }
-},[empty]);
+
+    const srcMatchName = dados[0].value.match(/^[A-Z]{1}[a-z]{1,}[ ]{1}[a-z]{1,}/g);
+    if(srcMatchName === null){
+        dados[0].style.border = "0.5px solid #de4a4a";
+        if(dados[0].value != ''){
+            h6[0].innerHTML = "Wrong format, put you correct name";
+        }
+    }
+
+    const srcMatchNum = dados[1].value.match(/^[0-9]{4}[ ][0-9]{4}[ ][0-9]{4}[ ][0-9]{4}$/g);
+    if(srcMatchNum === null){
+        dados[1].style.border = "0.5px solid #de4a4a";
+        if(dados[1].value != ''){
+            h6[1].innerHTML = "Wrong format, only numbers";
+        }
+    }
+
+    for(var x=2; x<4; x++){
+        const srcMatchDate = dados[x].value.match(/^[0-9]{2}$/g);
+        if(srcMatchDate === null){
+            dados[x].style.border = "0.5px solid #de4a4a";
+            if(dados[x].value != ''){
+                h6[x].innerHTML = "Wrong format, only numbers";
+            }
+        }
+    }
+
+    const srcMatchCvc = dados[4].value.match(/^[0-9]{3}$/g);
+    if(srcMatchCvc === null){
+        dados[4].style.border = "0.5px solid #de4a4a";
+        if(dados[4].value != ''){
+            h6[4].innerHTML = "Wrong format, only numbers";
+        }
+    }
+
+}
     return(
         <div className='form'>
             <form>
@@ -117,6 +140,7 @@ useEffect(() => {
                     <div className='box-cvc'>
                         <p>cvc</p>
                         <input type="text" value={inputCvc} onChange={(e) => preencherCvc(e)} id="cvc" placeholder='e.g. 123'/>
+                        <h6 style={{display: 'none'}}></h6>
                         <h6></h6>
                     </div>
                 </div>
