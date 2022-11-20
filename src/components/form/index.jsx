@@ -119,8 +119,8 @@ function handleClick(e){
             h6[4].innerHTML = "Wrong format, only numbers";
         }
     }
-
 }
+
     return(
         <div className='form'>
             <form>

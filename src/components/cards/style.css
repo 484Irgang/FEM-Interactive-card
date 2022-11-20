@@ -1,5 +1,67 @@
 .box-cards{
     width: 100%;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     max-width: 550px;
-    background-color: aqua;
+/*    background-color: aqua;*/
+}
+.box-cards .card{
+    width: 350px;
+    height: 200px;
+    border-radius: 10px;
+    position: relative;
+}
+.box-cards .card-1{
+    background-image: url("../../assets/bg-card-front.png");
+    background-size: 100% 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.box-cards .card-1 h2{
+    position: relative;
+    top: 20px;
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    font-family: Rubik;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+.box-cards .card-desc{
+    display: flex;
+    justify-content: space-between;
+}
+.box-cards .card-desc p{
+    font-family: Rubik;
+    font-weight: 400;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+.box-cards .card-logo{
+    width: 70px;
+    height: 45px;
+    background-image: url("../../assets/card-logo.svg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+.box-cards .card-2{
+    align-self: flex-end;
+    background-image: url("../../assets/bg-card-back.png");
+    background-size: 100% 100%;
+}
+.box-cards .card-2 p{
+    position: relative;
+    top: 49%;
+    transform: translateY(-50%);
+    left: 80%;
+    font-family: Rubik;
+    font-weight: 400;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 13px;
 }
