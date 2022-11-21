@@ -78,7 +78,15 @@ function handleClick(e){
     for(var i=0;i<dados.length;i++){
         if(dados[i].value == ''){
             dados[i].style.border = "0.5px solid #de4a4a";
-            h6[i].innerHTML = "Can't be blank";
+            if(i == 2 || i == 3){
+                h6[2].innerHTML = "Can't be blank";
+            }
+            else if(i == 4){
+                h6[3].innerHTML = "Can't be blank";
+            }
+            else{
+                h6[i].innerHTML = "Can't be blank";
+            }
         }
         else{
             dados[i].style.border = "0.5px solid #dedede";
@@ -107,7 +115,7 @@ function handleClick(e){
         if(srcMatchDate === null){
             dados[x].style.border = "0.5px solid #de4a4a";
             if(dados[x].value != ''){
-                h6[x].innerHTML = "Wrong format, only numbers";
+                h6[2].innerHTML = "Wrong format, only numbers";
             }
         }
     }
@@ -140,7 +148,6 @@ function handleClick(e){
                     <div className='box-cvc'>
                         <p>cvc</p>
                         <input type="text" value={inputCvc} onChange={(e) => preencherCvc(e)} id="cvc" placeholder='e.g. 123'/>
-                        <h6 style={{display: 'none'}}></h6>
                         <h6></h6>
                     </div>
                 </div>
