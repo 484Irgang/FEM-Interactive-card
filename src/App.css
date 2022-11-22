@@ -5,7 +5,6 @@
 }
 body,html{
     height: 100%;
-    overflow: hidden;
 }
 .App{
     width: 100%;
@@ -13,9 +12,17 @@ body,html{
     background-image: url("./assets/bg-main-desktop.png");
     background-size: auto 100%;
     background-repeat: no-repeat;
-    background-position: 10;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 2%;
+}
+
+@media screen and (max-width: 700px){
+    .App{
+        height: auto;
+        background-image: url("./assets/bg-main-mobile.png");
+        background-size: 100% 45%;
+        flex-direction: column;
+    }
 }
