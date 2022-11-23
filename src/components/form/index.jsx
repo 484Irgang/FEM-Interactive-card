@@ -73,6 +73,7 @@ function handleClick(e){
 
     const dados = [nome,number,dateMonth,dateYear,cvc];
     const h6 = document.querySelectorAll(".form h6");
+    var validado = false;
 
 
     for(var i=0;i<dados.length;i++){
@@ -81,9 +82,6 @@ function handleClick(e){
             if(i == 2 || i == 3){
                 h6[2].innerHTML = "Can't be blank";
             }
-            else if(i == 4){
-                h6[3].innerHTML = "Can't be blank";
-            }
             else{
                 h6[i].innerHTML = "Can't be blank";
             }
@@ -91,12 +89,14 @@ function handleClick(e){
         else{
             dados[i].style.border = "0.5px solid #dedede";
             h6[i].innerHTML = "";
+            validado = true;
         }
     }
 
-    const srcMatchName = dados[0].value.match(/^[A-Z]{1}[a-z]{1,}[ ]{1}[a-z]{1,}/g);
+    const srcMatchName = dados[0].value.match(/^[A-Z]{1}[a-z]{1,}[ ]{1}[A-Za-z]{1,}/g);
     if(srcMatchName === null){
         dados[0].style.border = "0.5px solid #de4a4a";
+        validado = false;
         if(dados[0].value != ''){
             h6[0].innerHTML = "Wrong format, put you correct name";
         }
@@ -105,6 +105,7 @@ function handleClick(e){
     const srcMatchNum = dados[1].value.match(/^[0-9]{4}[ ][0-9]{4}[ ][0-9]{4}[ ][0-9]{4}$/g);
     if(srcMatchNum === null){
         dados[1].style.border = "0.5px solid #de4a4a";
+        validado = false;
         if(dados[1].value != ''){
             h6[1].innerHTML = "Wrong format, only numbers";
         }
@@ -114,6 +115,7 @@ function handleClick(e){
         const srcMatchDate = dados[x].value.match(/^[0-9]{2}$/g);
         if(srcMatchDate === null){
             dados[x].style.border = "0.5px solid #de4a4a";
+            validado = false;
             if(dados[x].value != ''){
                 h6[2].innerHTML = "Wrong format, only numbers";
             }
@@ -123,9 +125,17 @@ function handleClick(e){
     const srcMatchCvc = dados[4].value.match(/^[0-9]{3}$/g);
     if(srcMatchCvc === null){
         dados[4].style.border = "0.5px solid #de4a4a";
+        validado = false;
         if(dados[4].value != ''){
             h6[4].innerHTML = "Wrong format, only numbers";
         }
+    }
+
+    if(validado === true){
+        console.log('validado');
+    }
+    else{
+        console.log("não passou");
     }
 }
 
@@ -148,6 +158,7 @@ function handleClick(e){
                     <div className='box-cvc'>
                         <p>cvc</p>
                         <input type="text" value={inputCvc} onChange={(e) => preencherCvc(e)} id="cvc" placeholder='e.g. 123'/>
+                        <h6 style={{display:"none"}}></h6>
                         <h6></h6>
                     </div>
                 </div>

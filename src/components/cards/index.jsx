@@ -12,7 +12,7 @@ function Cards(props){
                 </div>
             </div>
             <div className='card card-2'>
-                <p>234</p>
+                <p>{props.cardcvc}</p>
             </div>
         </div>
     )

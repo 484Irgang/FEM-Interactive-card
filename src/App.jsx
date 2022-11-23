@@ -8,10 +8,11 @@ function App() {
   const [cardName, setCardName] = useState("Example j Simpson");
   const [cardMonth, setCardMonth] = useState("00");
   const [cardYear, setCardYear] = useState("00");
+  const [cardCvc, setCardCvc] = useState("123");
 
   return (
     <div className="App">
-      <Cards cardnum={cardNum} cardname={cardName} carddate={[cardMonth,cardYear]}/>
+      <Cards cardnum={cardNum} cardname={cardName} carddate={[cardMonth,cardYear]} cardcvc={cardCvc}/>
       <Form/>
     </div>
   )
