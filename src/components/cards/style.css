@@ -12,6 +12,7 @@
     height: 200px;
     border-radius: 10px;
     position: relative;
+    box-shadow: 5px 15px 30px rgba(88, 88, 88, 0.2);
 }
 .box-cards .card-1{
     background-image: url("../../assets/bg-card-front.png");

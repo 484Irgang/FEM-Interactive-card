@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './style.css'
 
-function Form(){
+function Form(props){
 const [inputNum, setInputNum] = useState();
 const [inputNome, setInputNome] = useState();
 const [inputMonth, setInputMonth] = useState();
@@ -75,7 +75,6 @@ function handleClick(e){
     const h6 = document.querySelectorAll(".form h6");
     var validado = false;
 
-
     for(var i=0;i<dados.length;i++){
         if(dados[i].value == ''){
             dados[i].style.border = "0.5px solid #de4a4a";
@@ -132,11 +131,10 @@ function handleClick(e){
     }
 
     if(validado === true){
-        console.log('validado');
+        props.liberar(true);
+        props.preenchercard(dados);
     }
-    else{
-        console.log("não passou");
-    }
+    
 }
 
     return(
