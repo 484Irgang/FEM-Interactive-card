@@ -1,0 +1,43 @@
+.confirmed{
+    width: 100%;
+    max-width: 550px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: aqua; */
+    text-align: center;
+}
+.confirmed .icone{
+    width: 64px;
+    height: 64px;
+    background-image: url("../../assets/icon-complete.svg");
+    background-size: 100% 100%;
+}
+.confirmed h2{
+    font-family: Rubik;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #220930;
+}
+.confirmed p{
+    font-family: Rubik;
+    font-size: 14px;
+    font-weight: 400;
+    color: #88868B;
+}
+.confirmed button{
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 0;
+    background-color: #220930;
+    font-family: Rubik;
+    color: #ffffff;
+    font-weight: 400;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
