@@ -3,7 +3,7 @@
 <p align="center">Este projeto foi criado através do desafio proposto pela plataforma Frontend Mentor, em que o objetivo era criar um formulário de inscrição para um cartão de crédito, que precisava ser feito com responsividade, interação direta e atualização do cartão assim que o preenchimento for validado, projeto criado com React para praticar componentização e alteração sem atualizar a página, finalizado no fim de 2022 e até o momento o projeto mais completo desenvolvido e finalizado.<br/><a href="https://484irgang.github.io/FEM-Interactive-card/"><img src="https://user-images.githubusercontent.com/99806060/229613626-8d496801-95c3-4bb0-84b3-5171ea16986d.png"/></a></p>
 <h1> :camera: Images</h1>
 <p align="center">
-<img align="right" src="https://user-images.githubusercontent.com/99806060/229611231-e5f781dc-4a56-445e-a909-8d8f8d7f7b28.jpg"/>
+<img src="https://user-images.githubusercontent.com/99806060/229611231-e5f781dc-4a56-445e-a909-8d8f8d7f7b28.jpg"/>
 <img width="600px" src="https://user-images.githubusercontent.com/99806060/229610569-ed7cd46e-715f-4f20-9acc-8a9ff93ce830.jpg"/>
 <img width="600px" src="https://user-images.githubusercontent.com/99806060/229610597-db967767-2258-4b72-868a-d00c29b02d94.jpg"/>
 </p>
